@@ -15,13 +15,9 @@ namespace RubiksCubeSimulation.Services
         {
 
           _cube.RotateFrontClockwise();
-        
-
-      
+           
             _cube.RotateRightCounterClockwise();
 
-
-   
             _cube.RotateUpClockwise();
 
             _cube.RotateBackCounterClockwise();

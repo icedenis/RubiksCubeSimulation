@@ -248,27 +248,27 @@
                     rotatedBack[2 - j, i] = back[i, j];
             back = rotatedBack;
 
-    
-            Color[] upEdge =  { up[0, 0], up[0, 1], up[0, 2] }; // 
-            Color[] rightEdge =  { right[2, 2], right[1, 2], right[0, 2] }; 
-            Color[] downEdge ={ down[2, 0], down[2, 1], down[2, 2] }; 
-            Color[] leftEdge =  { left[0, 0], left[1, 0], left[2, 0] }; 
+            Color[] upEdge = { up[0, 0], up[0, 1], up[0, 2] };
+            Color[] rightEdge = { right[0, 2], right[1, 2], right[2, 2] };
+            Color[] downEdge = { down[2, 0], down[2, 1], down[2, 2] };
+            Color[] leftEdge = { left[0, 0], left[1, 0], left[2, 0] };
 
+            // Correctly map the edges after back face rotation
             up[0, 0] = leftEdge[2];
             up[0, 1] = leftEdge[1];
             up[0, 2] = leftEdge[0];
 
-            right[0, 2] = upEdge[2];
+            right[0, 2] = upEdge[0];
             right[1, 2] = upEdge[1];
-            right[2, 2] = upEdge[0];
+            right[2, 2] = upEdge[2];
 
-            down[2, 0] = rightEdge[0];
+            down[2, 0] = rightEdge[2];
             down[2, 1] = rightEdge[1];
-            down[2, 2] = rightEdge[2];
+            down[2, 2] = rightEdge[0];
 
-            left[0, 0] = downEdge[2];
+            left[0, 0] = downEdge[0];
             left[1, 0] = downEdge[1];
-            left[2, 0] = downEdge[0];
+            left[2, 0] = downEdge[2];
         }
 
         public void RotateBackClockwise()
@@ -294,8 +294,8 @@
             left[2, 0] = upEdge[2];
 
           right[0, 2] = downEdge[0];
-    right[1, 2] = downEdge[1];
-    right[2, 2] = downEdge[2];
+          right[1, 2] = downEdge[1];
+          right[2, 2] = downEdge[2];
 
             down[2, 0] = leftEdge[0];
             down[2, 1] = leftEdge[1];

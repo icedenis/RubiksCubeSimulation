@@ -309,6 +309,34 @@ namespace Tests
             Assert.Equal(White, cube.left[1, 0]);
             Assert.Equal(White, cube.left[2, 0]);
         }
+
+
+        [Fact]
+        public void TestEdgeRotateCounterBackClockwise()
+        {
+            var cube = new RubiksCube();
+
+
+            cube.RotateBackCounterClockwise();
+
+            Assert.Equal(Blue, cube.back[1, 1]);
+
+            Assert.Equal(Orange, cube.up[0, 0]);
+            Assert.Equal(Orange, cube.up[0, 1]);
+            Assert.Equal(Orange, cube.up[0, 2]);
+
+            Assert.Equal(White, cube.right[0, 2]);
+            Assert.Equal(White, cube.right[1, 2]);
+            Assert.Equal(White, cube.right[2, 2]);
+
+            Assert.Equal(Red, cube.down[2, 0]);
+            Assert.Equal(Red, cube.down[2, 1]);
+            Assert.Equal(Red, cube.down[2, 2]);
+
+            Assert.Equal(Yellow, cube.left[0, 0]);
+            Assert.Equal(Yellow, cube.left[1, 0]);
+            Assert.Equal(Yellow, cube.left[2, 0]);
+        }
         [Fact]
         public void TestRotateBackCounterClockwise()
         {
@@ -509,26 +537,73 @@ namespace Tests
 
 
 
+
+
+
    
             cube.RotateRightCounterClockwise();
   
+
             Assert.Equal(White, cube.front[0, 2]);
             Assert.Equal(White, cube.front[1, 2]);
             Assert.Equal(Orange, cube.front[2, 2]);
 
+            //left
+            Assert.Equal(Yellow, cube.left[0, 2]);
+            Assert.Equal(Yellow, cube.left[1, 2]);
+            Assert.Equal(Yellow, cube.left[2, 2]);
+
+            //up
+            Assert.Equal(Orange, cube.up[2, 0]);
+            Assert.Equal(Orange, cube.up[2, 1]);
+            Assert.Equal(Blue, cube.up[2, 2]);
+            //down
+
+            Assert.Equal(Red, cube.down[0, 0]);
+            Assert.Equal(Red, cube.down[0, 1]);
+            Assert.Equal(Green, cube.down[0, 2]);
+
+
+
+
             //up 
 
- 
+
             cube.RotateUpClockwise();
         
+            //right
             Assert.Equal(Yellow, cube.right[0, 0]);
             Assert.Equal(Blue, cube.right[0, 1]);
             Assert.Equal(Blue, cube.right[0, 2]);
 
+            //left face 
+            Assert.Equal(Green, cube.left[0, 0]);
+            Assert.Equal(Green, cube.left[0, 1]);
+            Assert.Equal(White, cube.left[0, 2]);
+
+            //front
+            Assert.Equal(Red, cube.front[0, 0]);
+            Assert.Equal(Red, cube.front[0, 1]);
+            Assert.Equal(Red, cube.front[0, 2]);
+
+            //back 
+            Assert.Equal(Orange, cube.back[0, 0]);
+            Assert.Equal(Orange, cube.back[0, 1]);
+            Assert.Equal(Yellow, cube.back[0, 2]);
+
+            //right counterclockwise
             cube.RotateBackCounterClockwise();
             Assert.Equal(Yellow, cube.back[0, 0]);
             Assert.Equal(Blue, cube.back[0, 1]);
             Assert.Equal(Blue, cube.back[0, 2]);
+
+
+            //left face
+            Assert.Equal(Yellow, cube.left[0, 0]);
+            Assert.Equal(Green, cube.left[0, 1]);
+            Assert.Equal(White, cube.left[0, 2]);
+
+
 
             cube.RotateLeftClockwise();
 
@@ -539,6 +614,21 @@ namespace Tests
             Assert.Equal(Red, cube.up[0, 0]);
             Assert.Equal(Blue, cube.up[1, 0]);
             Assert.Equal(Blue, cube.up[2, 0]);
+
+
+            Assert.Equal(Green, cube.left[0, 0]);
+            Assert.Equal(Yellow, cube.left[0, 1]);
+            Assert.Equal(Yellow, cube.left[0, 2]);
+
+            Assert.Equal(Orange, cube.left[1, 0]);
+            Assert.Equal(Orange, cube.left[1, 1]);
+            Assert.Equal(Green, cube.left[1, 2]);
+
+            Assert.Equal(Blue, cube.up[2, 0]);
+            Assert.Equal(Blue, cube.up[2, 1]);
+            Assert.Equal(Blue, cube.up[2, 2]);
+
+
 
 
             cube.RotateDownCounterClockwise();
@@ -555,6 +645,20 @@ namespace Tests
             Assert.Equal(Blue, cube.up[2, 0]);
             Assert.Equal(Blue, cube.up[2, 1]);
             Assert.Equal(Blue, cube.up[2, 2]);
+
+
+            //left
+            Assert.Equal(Green, cube.left[0, 0]);
+            Assert.Equal(Yellow, cube.left[0, 1]);
+            Assert.Equal(Yellow, cube.left[0, 2]);
+
+            Assert.Equal(Orange, cube.left[1, 0]);
+            Assert.Equal(Orange, cube.left[1, 1]);
+            Assert.Equal(Green, cube.left[1, 2]);
+
+            Assert.Equal(Blue, cube.left[2, 0]);
+            Assert.Equal(Blue, cube.right[0, 1]);
+            Assert.Equal(Blue, cube.down[0, 2]);
         }
 
 
