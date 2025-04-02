@@ -40,7 +40,7 @@ The cube uses a coordinate system where each position on a face is identified by
 
 The application produces an output showing the state of the cube after applying the specified rotations:
 
-![Cube Output](cube_output.png)
+![Cube Output](cubeoutput.png)
 
 *Figure 2: Console output showing the solved cube and the cube after rotations*
 
