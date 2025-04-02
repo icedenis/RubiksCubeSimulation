@@ -284,21 +284,24 @@
             Color[] downEdge = { down[2, 0], down[2, 1], down[2, 2] };
             Color[] leftEdge = { left[0, 0], left[1, 0], left[2, 0] };
 
-            up[0, 0] = leftEdge[2];
-            up[0, 1] = leftEdge[1];
-            up[0, 2] = leftEdge[0];
+            up[0, 0] = rightEdge[0];
+            up[0, 1] = rightEdge[1];
+            up[0, 2] = rightEdge[2];
 
-            right[0, 2] = upEdge[2];
-            right[1, 2] = upEdge[1];
-            right[2, 2] = upEdge[0];
 
-            down[2, 0] = rightEdge[0];
-            down[2, 1] = rightEdge[1];
-            down[2, 2] = rightEdge[2];
+            left[0, 0] = upEdge[0];
+            left[1, 0] = upEdge[1];
+            left[2, 0] = upEdge[2];
 
-            left[0, 0] = downEdge[2];
-            left[1, 0] = downEdge[1];
-            left[2, 0] = downEdge[0];
+          right[0, 2] = downEdge[0];
+    right[1, 2] = downEdge[1];
+    right[2, 2] = downEdge[2];
+
+            down[2, 0] = leftEdge[0];
+            down[2, 1] = leftEdge[1];
+            down[2, 2] = leftEdge[2];
+
+
         }
 
         public void RotateLeftCounterClockwise()
@@ -432,29 +435,92 @@
 
 
 
+
+
+        //public void PrintCube()
+        //{
+        //    Console.WriteLine("Cube State:");
+        //    PrintFace("Up", up);
+        //    PrintFace("Front", front);
+        //    PrintFace("Right", right);
+        //    PrintFace("Back", back);
+        //    PrintFace("Left", left);
+        //    PrintFace("Down", down);
+        //}
+
         public void PrintCube()
         {
-            Console.WriteLine("Cube State:");
-            PrintFace("Up", up);
-            PrintFace("Front", front);
-            PrintFace("Right", right);
-            PrintFace("Back", back);
-            PrintFace("Left", left);
-            PrintFace("Down", down);
-        }
-
-        private void PrintFace(string faceName, Color[,] face)
-        {
-            Console.WriteLine($"{faceName} Face :");
+            Console.WriteLine();
+            Console.WriteLine("Up Face (White)");
             for (int i = 0; i < 3; i++)
             {
+                Console.Write("       "); 
                 for (int j = 0; j < 3; j++)
                 {
-                    Console.Write($"[{i},{j}]:{face[i, j]} ");
+                    Console.Write($"[{i},{j}]:{up[i, j]} ");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Left Face (Orange)                    Front Face (Green)                    Right Face (Red)                    Back Face (Blue)");
+            for (int i = 0; i < 3; i++)
+            {
+                // Left face
+                for (int j = 0; j < 3; j++)
+                {
+                    Console.Write($"[{i},{j}]:{left[i, j]} ");
+                }
+                Console.Write("  ");
+
+       
+                for (int j = 0; j < 3; j++)
+                {
+                    Console.Write($"[{i},{j}]:{front[i, j]} ");
+                }
+                Console.Write("  ");
+
+       
+                for (int j = 0; j < 3; j++)
+                {
+                    Console.Write($"[{i},{j}]:{right[i, j]} ");
+                }
+                Console.Write("  ");
+
+          
+                for (int j = 0; j < 3; j++)
+                {
+                    Console.Write($"[{i},{j}]:{back[i, j]} ");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Down Face (Yellow)");
+            for (int i = 0; i < 3; i++)
+            {
+                Console.Write("       ");
+                for (int j = 0; j < 3; j++)
+                {
+                    Console.Write($"[{i},{j}]:{down[i, j]} ");
                 }
                 Console.WriteLine();
             }
             Console.WriteLine();
         }
+
+        //private void PrintFace(string faceName, Color[,] face)
+        //{
+        //    Console.WriteLine($"{faceName} Face :");
+        //    for (int i = 0; i < 3; i++)
+        //    {
+        //        for (int j = 0; j < 3; j++)
+        //        {
+        //            Console.Write($"[{i},{j}]:{face[i, j]} ");
+        //        }
+        //        Console.WriteLine();
+        //    }
+        //    Console.WriteLine();
+        //}
     }
 }

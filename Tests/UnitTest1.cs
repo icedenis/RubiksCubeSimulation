@@ -269,6 +269,47 @@ namespace Tests
         }
 
         [Fact]
+        public void TestEdgeRotateBackClockwise()
+        {
+            var cube = new RubiksCube();
+
+            cube.up[0, 0] = White;
+            cube.up[0, 1] = White;
+            cube.up[0, 2] = White;
+
+            cube.right[0, 2] = Red;
+            cube.right[1, 2] = Red;
+            cube.right[2, 2] = Red;
+
+            cube.down[2, 0] = Yellow;
+            cube.down[2, 1] = Yellow;
+            cube.down[2, 2] = Yellow;
+
+            cube.left[0, 0] = Orange;
+            cube.left[1, 0] = Orange;
+            cube.left[2, 0] = Orange;
+
+            cube.RotateBackClockwise();
+
+            Assert.Equal(Blue, cube.back[1, 1]);
+
+            Assert.Equal(Red, cube.up[0, 0]);
+            Assert.Equal(Red, cube.up[0, 1]);
+            Assert.Equal(Red, cube.up[0, 2]);
+
+            Assert.Equal(Yellow, cube.right[0, 2]);
+            Assert.Equal(Yellow, cube.right[1, 2]);
+            Assert.Equal(Yellow, cube.right[2, 2]);
+
+            Assert.Equal(Orange, cube.down[2, 0]);
+            Assert.Equal(Orange, cube.down[2, 1]);
+            Assert.Equal(Orange, cube.down[2, 2]);
+
+            Assert.Equal(White, cube.left[0, 0]);
+            Assert.Equal(White, cube.left[1, 0]);
+            Assert.Equal(White, cube.left[2, 0]);
+        }
+        [Fact]
         public void TestRotateBackCounterClockwise()
         {
             var cube = new RubiksCube();
@@ -502,7 +543,7 @@ namespace Tests
 
             cube.RotateDownCounterClockwise();
 
-            // final state matches expected result imgae
+  
             Assert.Equal(Red, cube.up[0, 0]);
             Assert.Equal(Orange, cube.up[0, 1]);
             Assert.Equal(Green, cube.up[0, 2]);
