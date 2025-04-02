@@ -291,7 +291,7 @@
 
             left[0, 0] = upEdge[2];
             left[1, 0] = upEdge[1];
-            left[2, 0] = upEdge[1];
+            left[2, 0] = upEdge[0];
 
           right[0, 2] = downEdge[2];
           right[1, 2] = downEdge[1];
