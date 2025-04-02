@@ -32,7 +32,7 @@ A console application that simulates a 3x3 Rubik's cube with the ability to perf
 
 The cube uses a coordinate system where each position on a face is identified by [row, column] coordinates:
 
-![Cube Output](https://github.com/username/RubiksCubeSimulation/blob/main/cube_output.png)
+![Cube Coordinate System](cube_coordinates.png.png)
 
 *Figure 1: Coordinate system for each face of the cube*
 
