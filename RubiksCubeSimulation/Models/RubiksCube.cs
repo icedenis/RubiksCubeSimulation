@@ -55,17 +55,17 @@
             Color[] leftEdge = { left[0, 2], left[1, 2], left[2, 2] };
 
         
-            right[0, 0] = upEdge[2];
+            right[0, 0] = upEdge[0];
             right[1, 0] = upEdge[1];
-            right[2, 0] = upEdge[0];
+            right[2, 0] = upEdge[2];
 
             down[0, 0] = rightEdge[2];
             down[0, 1] = rightEdge[1];
             down[0, 2] = rightEdge[0];
 
-            left[0, 2] = downEdge[2];
+            left[0, 2] = downEdge[0];
             left[1, 2] = downEdge[1];
-            left[2, 2] = downEdge[0];
+            left[2, 2] = downEdge[2];
 
             up[2, 0] = leftEdge[2];
             up[2, 1] = leftEdge[1];
@@ -88,17 +88,17 @@
             Color[] leftEdge = { left[0, 2], left[1, 2], left[2, 2] };
 
             
-            left[0, 2] = upEdge[0];
+            left[0, 2] = upEdge[2];
             left[1, 2] = upEdge[1];
-            left[2, 2] = upEdge[2];
+            left[2, 2] = upEdge[0];
 
             up[2, 0] = rightEdge[0];
             up[2, 1] = rightEdge[1];
             up[2, 2] = rightEdge[2];
 
-            right[0, 0] = downEdge[0];
+            right[0, 0] = downEdge[2];
             right[1, 0] = downEdge[1];
-            right[2, 0] = downEdge[2];
+            right[2, 0] = downEdge[0];
 
             down[0, 0] = leftEdge[0];
             down[0, 1] = leftEdge[1];
@@ -289,13 +289,13 @@
             up[0, 2] = rightEdge[2];
 
 
-            left[0, 0] = upEdge[0];
+            left[0, 0] = upEdge[2];
             left[1, 0] = upEdge[1];
-            left[2, 0] = upEdge[2];
+            left[2, 0] = upEdge[1];
 
-          right[0, 2] = downEdge[0];
+          right[0, 2] = downEdge[2];
           right[1, 2] = downEdge[1];
-          right[2, 2] = downEdge[2];
+          right[2, 2] = downEdge[0];
 
             down[2, 0] = leftEdge[0];
             down[2, 1] = leftEdge[1];
