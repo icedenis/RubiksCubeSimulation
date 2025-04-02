@@ -43,3 +43,19 @@ The application produces an output showing the state of the cube after applying 
 ![Cube Output](cube_output.png)
 
 *Figure 2: Console output showing the solved cube and the cube after rotations*
+
+## Testing
+
+The application has been thoroughly tested using:
+
+1. **Unit Tests**: A comprehensive suite of unit tests verifies the correctness of:
+   - Individual face rotations (both clockwise and counter-clockwise)
+   - Edge piece transfers between faces
+   - Proper state maintenance through multiple rotations
+
+2. **Verification Methods**:
+   - Confirmed that applying a rotation followed by its inverse returns the cube to its original state
+   - Validated that corner and edge pieces maintain their relationships during rotations
+   - Compared the results of the specified rotation sequence (F R' U B' L D') with a reference implementation (https://rubiks-cube-solver.com/)
+
+The testing approach ensures that the simulator accurately represents a physical Rubik's Cube in all aspects of its behavior.
